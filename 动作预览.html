@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>蛋黄 · 三组动作检查</title>
+<style>
+:root{font-family:system-ui,-apple-system,sans-serif;color:#533c2c;background:#fff9ef}body{max-width:920px;margin:36px auto;padding:0 20px}h1{font-size:28px}p{line-height:1.8}main{display:flex;gap:18px;flex-wrap:wrap;margin:24px 0}.card{flex:1;min-width:220px;border:1px solid #eadbc5;border-radius:20px;padding:16px;text-align:center;background:#fff}.sprite{width:192px;height:208px;background-image:url("danhuang/spritesheet.webp");background-size:1536px 2288px;margin:8px auto}.hint{font-size:14px;color:#7a6958;min-height:42px}button{border:1px solid #d6ba8e;border-radius:9px;background:#f9e4be;color:#513b29;padding:9px 13px;cursor:pointer;margin:4px;font:inherit}button:focus-visible{outline:3px solid #6a955f}small{display:block;color:#7a6958;line-height:1.8}a{color:#6a6d34}#mode{font-weight:600}#error{color:#9d392b}
+</style>
+<h1>蛋黄的三组玩耍动作</h1>
+<p>这是安装包自带的离线素材预览。按钮只控制此页面，不会触发桌面客户端的聊天状态。</p>
+<button id="loop">连续检查素材</button><button id="native">模拟客户端节奏</button>
+<p id="mode" role="status">当前：连续检查素材</p><p id="error" role="alert"></p>
+<main id="cards"></main>
+<p><a href="动作与触发说明.md">查看真实触发条件</a> · <a href="给Codex的安装说明.md">查看安装说明</a></p>
+<small>连续检查会一直循环玩具动作；模拟客户端节奏会播放三遍后回到慢速待机。系统减少动态效果对原生客户端的影响，见触发说明。</small>
+<script>
+const idle=[280,110,110,140,140,320].map((ms,col)=>({row:0,col,ms:ms*6}));
+const actions=[{key:'running',name:'坐姿拨球',row:7,last:220,ms:120,trigger:'工作中 · Running'},{key:'waiting',name:'逗猫棒扑抓',row:6,last:260,ms:150,trigger:'需要输入 · Needs input'},{key:'review',name:'抱鱼轻蹬',row:8,last:280,ms:150,trigger:'完成且有未读结果 · Ready'}];
+let mode='loop';const cards=[];
+for(const action of actions){
+ const card=document.createElement('section');card.className='card';card.dataset.state=action.key;
+ const title=document.createElement('h2');title.textContent=action.name;
+ const trigger=document.createElement('p');trigger.className='hint';trigger.textContent=action.trigger;
+ const sprite=document.createElement('div');sprite.className='sprite';sprite.setAttribute('role','img');sprite.setAttribute('aria-label',action.name);
+ const replay=document.createElement('button');replay.textContent='重新播放';
+ const phase=document.createElement('small');phase.setAttribute('role','status');
+ card.append(title,trigger,sprite,replay,phase);document.querySelector('#cards').append(card);
+ const state={action,sprite,phase,timer:null,index:0,frames:[]};cards.push(state);replay.onclick=()=>start(state);
+}
+function start(card){
+ clearTimeout(card.timer);card.index=0;
+ const frames=Array.from({length:6},(_,col)=>({row:card.action.row,col,ms:col===5?card.action.last:card.action.ms}));
+ card.frames=mode==='native'?[...frames,...frames,...frames,...idle]:frames;
+ function tick(){
+  const frame=card.frames[card.index];card.sprite.style.backgroundPosition=`${-frame.col*192}px ${-frame.row*208}px`;
+  card.sprite.dataset.row=String(frame.row);card.sprite.dataset.frame=String(frame.col);
+  card.phase.textContent=frame.row===0?'三遍已结束，慢速待机':'正在播放玩具动作';
+  card.timer=setTimeout(()=>{card.index++;if(card.index===card.frames.length)card.index=mode==='native'?18:0;tick();},frame.ms);
+ }
+ tick();
+}
+function setMode(next){mode=next;document.querySelector('#mode').textContent=next==='native'?'当前：模拟客户端，三遍后待机':'当前：连续检查素材';cards.forEach(start);}
+document.querySelector('#loop').onclick=()=>setMode('loop');document.querySelector('#native').onclick=()=>setMode('native');
+const image=new Image();image.onload=()=>{if(image.naturalWidth!==1536||image.naturalHeight!==2288){document.querySelector('#error').textContent='图集尺寸不符，请重新获取完整安装包。';return;}cards.forEach(start);};image.onerror=()=>document.querySelector('#error').textContent='未找到图集。请先完整解压，并保留 danhuang 文件夹与本页面的相对位置。';image.src='danhuang/spritesheet.webp';
+window.addEventListener('pagehide',()=>cards.forEach(card=>clearTimeout(card.timer)));
+</script>
+</html>

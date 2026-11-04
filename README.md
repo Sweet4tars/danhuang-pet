@@ -6,9 +6,9 @@
 
 ## 下载与安装
 
-任何人都可以下载并将蛋黄安装为自己的桌面电子宠物，无需单独申请。此公开仓库的下载无需登录 GitHub。
+任何人都可以下载并将蛋黄安装为自己的桌面电子宠物，无需单独申请。完整安装压缩包可以直接转发给另一台电脑，解压和安装不需要 GitHub 账号或网络。
 
-直接下载 [完整安装压缩包](https://github.com/Sweet4tars/danhuang-pet/raw/refs/heads/main/dist/danhuang-pet-v1.1.0.zip)，解压后即可安装；也可以克隆本仓库：
+获得完整安装压缩包后，先阅读 [给 Codex 的安装说明](给Codex的安装说明.md)。GitHub 副本的 [安装压缩包](https://github.com/Sweet4tars/danhuang-pet/raw/refs/heads/main/dist/danhuang-pet-v1.1.1.zip) 和克隆入口也保留在这里；是否需要仓库访问权限，以 GitHub 当时的可见性设置为准：
 
 ```sh
 git clone https://github.com/Sweet4tars/danhuang-pet.git
@@ -17,9 +17,9 @@ cd danhuang-pet
 
 ### 让 Codex 帮你安装
 
-将下面这段话连同仓库地址发给另一台电脑的 Codex：
+将完整安装压缩包发给另一台电脑的 Codex，并发送：
 
-> 请从 https://github.com/Sweet4tars/danhuang-pet 获取最新版蛋黄，先阅读 README.md 和 install.py，核对 manifest.json 中的文件校验值，然后将它安装到这台电脑的 Pets。使用本机实际的 CODEX_HOME；没有自定义时使用用户目录下的 .codex。已有蛋黄先备份，保留其他宠物，最后告诉我如何刷新并选中蛋黄。
+> 请解压附件，先阅读“给Codex的安装说明.md”，核对文件并安装蛋黄到本机 Pets。已有蛋黄先备份，保留其他宠物，最后告诉我如何刷新并选中蛋黄。
 
 文件下载到本机后，安装不需要联网。
 
@@ -36,7 +36,7 @@ Windows 通常使用 `py -3 install.py`。如果没有 Python，Codex 也可以�
 
 默认安装位置是 `<CODEX_HOME>/pets/danhuang/`。没有设置 `CODEX_HOME` 时，macOS 为 `~/.codex/pets/danhuang/`，Windows 为 `%USERPROFILE%\.codex\pets\danhuang\`。使用自定义位置时可运行 `python3 install.py --codex-home "实际路径"`。
 
-安装后在桌面客户端的 **设置 → Pets** 中刷新并选择“蛋黄”；若版本没有刷新按钮，可重新打开客户端。安装工具只负责放置文件，界面是否成功展示仍需在目标电脑确认。不同客户端版本的菜单可能有所不同。
+安装后在桌面客户端的 **设置 → Pets** 中刷新并选择“蛋黄”；若版本没有刷新按钮，可重新打开客户端。安装工具负责放置文件；选择宠物可能仍需在界面完成一次。目标电脑是否成功展示，应在该电脑确认。
 
 ## 本版动作
 
@@ -46,9 +46,11 @@ Windows 通常使用 `py -3 install.py`。如果没有 Python，Codex 也可以�
 | --- | --- |
 | 工作 / running | 用前爪拨动小球 |
 | 等待 / waiting | 按住逗猫棒，歪头扑抓羽毛 |
-| 完成 / review | 抱住小鱼玩具，后爪轻蹬 |
+| 完成且有未读结果 / review | 抱住小鱼玩具，后爪轻蹬 |
 
-其他动作和十六个看向方向沿用已经校验的原版。此安装包更新外观动画，不改变客户端的状态触发规则，也不新增喂食或玩具按钮。
+这些动作由聊天状态触发，平时不会随机轮播。当前核对的客户端会在状态切换时播放三遍对应动作，再回到慢速待机；鼠标悬停和拖动还会临时覆盖任务动作。详见 [动作与触发说明](动作与触发说明.md)。
+
+双击 [动作预览.html](动作预览.html) 可离线检查素材。预览页按钮控制本地预览，不能向桌面客户端发送状态。
 
 ## 文件与版本
 
@@ -57,8 +59,11 @@ Windows 通常使用 `py -3 install.py`。如果没有 Python，Codex 也可以�
 - `install.py`：仅依赖 Python 标准库的安装工具，支持校验、重复安装检测和旧版备份。
 - `manifest.json`、`SHA256SUMS`：版本及文件完整性校验。
 - `dist/`：便于跨电脑传输的压缩包。
+- `给Codex的安装说明.md`：供接收电脑的 Codex 执行安装。
+- `动作与触发说明.md`：实际触发条件、短时播放机制与核验范围。
+- `动作预览.html`：无需安装客户端即可打开的离线素材预览。
 
-版本：**1.1.0 · 玩耍版**。图集 SHA-256：
+安装包版本：**1.1.1 · 迁移说明与触发核验版**；动画沿用 **1.1.0 玩耍版**。图集 SHA-256：
 
 ```text
 cca3726f5daa1bd07cce4d96238844518c91a5f8094cb1210cd65c0275346c9e
