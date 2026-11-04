@@ -4,13 +4,26 @@
 
 ![蛋黄的三组玩耍动作](previews/toy-actions.gif)
 
-## 用另一台电脑的 Codex 安装
+## 下载与安装
+
+任何人都可以下载并将蛋黄安装为自己的桌面电子宠物，无需单独申请。此公开仓库的下载无需登录 GitHub。
+
+直接下载 [完整安装压缩包](https://github.com/Sweet4tars/danhuang-pet/raw/refs/heads/main/dist/danhuang-pet-v1.1.0.zip)，解压后即可安装；也可以克隆本仓库：
+
+```sh
+git clone https://github.com/Sweet4tars/danhuang-pet.git
+cd danhuang-pet
+```
+
+### 让 Codex 帮你安装
 
 将下面这段话连同仓库地址发给另一台电脑的 Codex：
 
 > 请从 https://github.com/Sweet4tars/danhuang-pet 获取最新版蛋黄，先阅读 README.md 和 install.py，核对 manifest.json 中的文件校验值，然后将它安装到这台电脑的 Pets。使用本机实际的 CODEX_HOME；没有自定义时使用用户目录下的 .codex。已有蛋黄先备份，保留其他宠物，最后告诉我如何刷新并选中蛋黄。
 
-私有仓库需要另一台电脑有相应的 GitHub 访问权限。文件下载到本机后，安装不需要联网。
+文件下载到本机后，安装不需要联网。
+
+### 手动安装
 
 在下载或克隆的仓库目录中，有 Python 3 时可运行：
 
@@ -24,8 +37,6 @@ Windows 通常使用 `py -3 install.py`。如果没有 Python，Codex 也可以�
 默认安装位置是 `<CODEX_HOME>/pets/danhuang/`。没有设置 `CODEX_HOME` 时，macOS 为 `~/.codex/pets/danhuang/`，Windows 为 `%USERPROFILE%\.codex\pets\danhuang\`。使用自定义位置时可运行 `python3 install.py --codex-home "实际路径"`。
 
 安装后在桌面客户端的 **设置 → Pets** 中刷新并选择“蛋黄”；若版本没有刷新按钮，可重新打开客户端。安装工具只负责放置文件，界面是否成功展示仍需在目标电脑确认。不同客户端版本的菜单可能有所不同。
-
-也可下载 [完整安装压缩包](dist/danhuang-pet-v1.1.0.zip)，解压后按上述方式安装。
 
 ## 本版动作
 
@@ -55,4 +66,8 @@ cca3726f5daa1bd07cce4d96238844518c91a5f8094cb1210cd65c0275346c9e
 
 自定义宠物通过本仓库在各电脑分别安装；GitHub 仓库更新后，需要在目标电脑重新获取并安装。图集为桌面 v2 格式，使用前需确认客户端支持 v2，不能直接当作其他尺寸格式的素材上传。
 
-动画装配与校验所参考的公开代码见 [ATTRIBUTION.md](ATTRIBUTION.md)。本仓库未为蛋黄形象及动画授予公开再分发或商业使用许可。
+## 使用说明与来源
+
+欢迎免费下载并将本仓库的成品动画及安装工具用于自己的桌面电子宠物。分享项目时请保留仓库链接和来源说明。上述使用许可不包含商业再分发授权。
+
+动画装配与校验所参考的公开代码见 [ATTRIBUTION.md](ATTRIBUTION.md)。
