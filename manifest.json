@@ -22,6 +22,5 @@
   "artworkChange": "hover petting and pink hearts",
   "installationGuide": "给Codex的安装说明.md",
   "triggerGuide": "动作与触发说明.md",
-  "offlinePreview": "动作预览.html",
-  "cloudPetUpdated": false
+  "offlinePreview": "动作预览.html"
 }

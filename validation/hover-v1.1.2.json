@@ -47,6 +47,10 @@
   "independent_visual_review": "pass",
   "offline_browser_interaction": "pass",
   "temporary_directory_install": "pass",
-  "cloud_pet_updated": false,
-  "cloud_live_playback_verified": false
+  "cloud_pet_updated": true,
+  "cloud_live_playback_verified": false,
+  "official_pets_mcp_validation": true,
+  "cloud_stored_pixels_identical": true,
+  "verification_scope": "publisher_existing_cloud_pet",
+  "cloud_verification": "validation/cloud-sync-v1.1.2.json"
 }

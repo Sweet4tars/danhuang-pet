@@ -1,0 +1,17 @@
+{
+  "verified_at_utc": "2026-11-06T03:54:11.285931+00:00",
+  "same_stable_id": true,
+  "active_selection_preserved": true,
+  "name_and_description_preserved": true,
+  "cloud_pet_updated": true,
+  "official_pets_mcp_validation_passed": true,
+  "source_atlas_sha256": "4507d42de5787c7f3a9e899e71e0f50259eec2e45a358e89e91416fd991b9d74",
+  "stored_sha256": "453878f1015b32b440808b164481b50c80cc9d1498f204dac160711cdebf3c23",
+  "stored_bytes_identical": false,
+  "stored_decoded_pixels_identical": true,
+  "all_other_animation_cells_preserved": true,
+  "client_live_playback_verified": false,
+  "verification_scope": "publisher_existing_cloud_pet",
+  "encoding_note": "Pets stores a PNG representation; its decoded RGBA pixels match the distributed WebP exactly.",
+  "version": "1.1.2"
+}
