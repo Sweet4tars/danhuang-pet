@@ -1,6 +1,6 @@
 {
-  "version": "1.1.1",
-  "releaseDate": "2026-11-04",
+  "version": "1.1.2",
+  "releaseDate": "2026-11-06",
   "petId": "danhuang",
   "displayName": "蛋黄",
   "spriteVersionNumber": 2,
@@ -14,12 +14,14 @@
       "sha256": "de0e0b4b0b1f9627934cd407db3c4ffc27191de7f50d56edace1040fe8c535b0"
     },
     "danhuang/spritesheet.webp": {
-      "size": 1542192,
-      "sha256": "cca3726f5daa1bd07cce4d96238844518c91a5f8094cb1210cd65c0275346c9e"
+      "size": 1552466,
+      "sha256": "4507d42de5787c7f3a9e899e71e0f50259eec2e45a358e89e91416fd991b9d74"
     }
   },
-  "artworkVersion": "1.1.0",
+  "baseVersion": "1.1.1",
+  "artworkChange": "hover petting and pink hearts",
   "installationGuide": "给Codex的安装说明.md",
   "triggerGuide": "动作与触发说明.md",
-  "offlinePreview": "动作预览.html"
+  "offlinePreview": "动作预览.html",
+  "cloudPetUpdated": false
 }

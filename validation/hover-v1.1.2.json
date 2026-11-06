@@ -1,0 +1,52 @@
+{
+  "version": "1.1.2",
+  "date": "2026-11-06",
+  "atlas": "danhuang/spritesheet.webp",
+  "sha256": "4507d42de5787c7f3a9e899e71e0f50259eec2e45a358e89e91416fd991b9d74",
+  "encoded_bytes": 1552466,
+  "width": 1536,
+  "height": 2288,
+  "sprite_version_number": 2,
+  "structural_validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "changed_cells": [
+    [
+      0,
+      6
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      4
+    ]
+  ],
+  "all_other_animation_cells_pixel_identical": true,
+  "padding_repair": {
+    "row": 0,
+    "column": 6,
+    "reason": "unused v2 cell must be transparent"
+  },
+  "independent_visual_review": "pass",
+  "offline_browser_interaction": "pass",
+  "temporary_directory_install": "pass",
+  "cloud_pet_updated": false,
+  "cloud_live_playback_verified": false
+}

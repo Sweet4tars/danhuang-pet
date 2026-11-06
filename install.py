@@ -103,6 +103,7 @@ def main():
         configured = os.environ.get("CODEX_HOME")
         codex_home = args.codex_home or (Path(configured) if configured else Path.home() / ".codex")
         install(codex_home.expanduser().resolve(), manifest)
+        print("本工具只更新本地文件；已迁移的云端宠物需通过 Pets 图集更新入口另行更新。")
         return 0
     except (OSError, ValueError, KeyError, TypeError) as error:
         print("安装未完成：" + str(error), file=sys.stderr)

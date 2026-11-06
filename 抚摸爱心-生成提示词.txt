@@ -1,0 +1,13 @@
+Use case: identity-preserve
+Asset type: a coherent FIVE-frame horizontal animation sprite strip for an existing desktop pet, Danhuang (蛋黄).
+Edit target: the current orange-gold and white long-haired plush cat in the attached sprite atlas. Supporting references: canonical cat and real-cat identity board. The layout guide is for five evenly spaced invisible slots only, never draw its marks.
+Primary request: replace only the mouse-hover JUMPING action with an affectionate BEING PETTED reaction, with pink hearts appearing and rising gently. This is an intentional user-requested override of the original jumping semantics. Do not draw a jump. The feet stay seated on the same ground baseline.
+Keep: EXACT same cat identity, realistic orange-gold markings and forehead stripes, white nose bridge, pink nose, white fluffy bib and white front paws, bushy curled tail on screen-right, large dark golden-green eyes, realistic plush fur, compact proportions, same front view, lighting and camera. Use the existing atlas sitting cat as the size and pose anchor, rather than changing breed or making a cartoon.
+Composition: ONE wide horizontal strip of exactly FIVE separate whole-body poses, left to right; generous transparent gaps and outer margins. Same cat scale, body center, ground baseline throughout. Whole ears, paws, tail and all hearts inside each slot. Transparent background, no floor, no shadow, no panels, no captions, no labels, no numbers, no UI. Do not copy the full atlas.
+Five successive keyframes:
+0: calm seated cat, looks up softly toward the invisible petting touch, eyes relaxed, no hearts, paws grounded.
+1: cat leans head a little toward screen-left and lifts chin as if gently rubbed on the head; eyelids close contentedly, one small opaque rose-pink heart appears just above the ear.
+2: same seated body, head gives a gentle nuzzle toward screen-right, eyes happily closed, cheeks fluffy and content; two distinct small opaque rose-pink hearts lift slightly above the head. Use natural feline pleasure rather than a human smile.
+3: head settles back toward center, eyes half closed, two hearts continue upward within the slot, simple solid readable heart shapes, no glow or motion lines.
+4: full relaxed seated return matching frame 0 body, center and baseline, softly open eyes, no hearts. Seamless return to frame 0 and to the existing idle.
+No drawn human hand: the user's real pointer supplies the touch; communicate petting by the head nuzzle, content eyes and explicit hearts. No toys, additional animals, clothing, sparkles or loose fur fragments. Hearts are the only requested detached effect. Size them to remain readable at a 192x208 pet cell. Keep the cat-body height and width stable across all five poses.
